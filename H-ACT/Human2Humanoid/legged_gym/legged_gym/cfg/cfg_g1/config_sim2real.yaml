@@ -1,0 +1,43 @@
+defaults:
+  - config_teleop
+  - override rewards: rewards_teleop_omnih2o_teacher 
+
+task: "robot:teleop"
+run_name: "OmniH2O_STUDENT_G1"
+num_envs: 1024
+sim_device: 'cuda:1'
+headless: True
+
+env:
+  # num_envs: 1024
+  num_observations: 1821
+  num_privileged_obs: 1904
+  add_short_history: True 
+  short_history_length: 25
+
+motion:
+  teleop_obs_version: "v-teleop-extend-vr-max-nolinvel"
+  teleop_selected_keypoints_names: [] 
+  extend_head: False
+  motion_file: 'resources/motions/g1/motion_data.pkl'
+
+asset:
+  zero_out_far: False 
+  termination_scales:
+    max_ref_motion_distance: 1.5 
+
+rewards: 
+  penalty_curriculum: True 
+  penalty_scale: 0.5
+  desired_feet_max_height_for_this_air : 0.1
+  
+train:
+  distill: True 
+  policy:
+    init_noise_std: 0.001 
+  dagger:
+    load_run_dagger: 25_11_19_13-28-09_OmniH2O_TEACHER_filtered
+    checkpoint_dagger: 12000
+    dagger_only: True
+
+resume : False

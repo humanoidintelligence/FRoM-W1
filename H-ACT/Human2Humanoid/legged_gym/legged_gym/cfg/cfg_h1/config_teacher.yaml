@@ -1,0 +1,32 @@
+defaults:
+  - config_teleop
+  - override motion: motion_full
+  - override rewards: rewards_teleop_omnih2o_teacher
+
+task: 'robot:teleop'
+run_name: "OmniH2O_TEACHER_H1"
+notes: ""
+num_envs: 1024
+sim_device: 'cuda:0'
+headless: True
+stand_on_ground: False
+
+env:
+  num_observations: 913
+  num_privileged_obs: 990
+
+motion:
+  teleop_obs_version: 'v-teleop-extend-max-full'
+  extend_head: False 
+  motion_file: 'resources/motions/h1/motion_data.pkl'
+
+asset:
+  zero_out_far: False 
+  termination_scales:
+    max_ref_motion_distance: 1.5 
+
+rewards: 
+  penalty_curriculum: True 
+  penalty_scale: 0.5
+  desired_feet_max_height_for_this_air : 0.3
+

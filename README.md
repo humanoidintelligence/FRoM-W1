@@ -24,10 +24,26 @@ We will gradually release the paper, data, codebase, model checkpoints, and the 
 
 Here is the current release progress:
 
+- 2025/12/20: We have uploaded the initial version of the code for two core modules, **H-GPT** and **H-ACT**!
 - 2025/12/20: We have released our lightweight, modular humanoid-robot deployment framework [**RoboJuDo**](https://github.com/HansZ8/RoboJuDo)!
 - 2025/12/20: We are thrilled to initiate the release of **FRoM-W1**!
 
 
+# Usage
+
+<div align="center">
+<img src="./assets/FRoM-W1-Overview.png" alt="overview" width="60%">
+</div>
+
+The complete **FRoM-W1** workflow is illustrated above:
+
+- **[H-GPT](./H-GPT/README.md)**  
+  Deploy **H-GPT** via command-line tools or a web interface to convert natural-language commands into human motion representations.  
+  This module provides full training, inference, and evaluation code, and pretrained models are available on HuggingFace.
+
+- **[H-ACT](./H-ACT/README.md)**  
+  **H-ACT** converts the motion representations from H-GPT into SMPL-X motion sequences and further retargets them to various humanoid robots.  
+  The resulting motions can be used both for training control policies and executing actions on real robots using our deployment pipeline.
 
 ## Citation
 If you find our work useful, please cite it for now in the following way:

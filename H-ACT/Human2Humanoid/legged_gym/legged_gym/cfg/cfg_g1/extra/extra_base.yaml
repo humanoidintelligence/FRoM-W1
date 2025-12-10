@@ -1,0 +1,18 @@
+gravity_link_idx: 0
+
+upper_link_idx: [13,14,15,16,17,18,19,20,21,22,23,24]
+lower_link_idx: [0,1,2,3,4,5,6,7,8,9,10,11,12]
+
+vr3_keypoints_idx: [22,23,24]
+
+upper_joint_idx: [12,13,14,15,16,17,18,19,20]
+lower_joint_idx: [0,1,2,3,4,5,6,7,8,9,10,11]
+dof_num: 21
+torso_link: "pelvis"
+
+extend: True
+extend_parent_ids: [17, 21, 0]
+extend_local_translation: [[0.2, 0, 0], [0.2, 0, 0], [0, 0, 0.45]]
+extend_local_rotation: [[1, 0, 0, 0], [1, 0, 0, 0], [1, 0, 0, 0]]
+
+hand_idx: [22, 23]

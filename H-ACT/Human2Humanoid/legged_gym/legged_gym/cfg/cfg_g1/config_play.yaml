@@ -1,0 +1,31 @@
+defaults:
+  - config_teleop
+  - override motion: motion_full
+  - override rewards: rewards_teleop_omnih2o_teacher
+
+task: 'robot:teleop'
+run_name: "OmniH2O_TEACHER"
+notes: ""
+num_envs: 1
+sim_device: 'cuda:0'
+headless: False
+use_wandb: False
+
+env:
+  num_observations: 993
+  num_privileged_obs: 1076
+
+
+motion:
+  teleop_obs_version: 'v-teleop-extend-max-full'
+  motion_file: 'resources/motions/g1/motion_data.pkl'
+
+asset:
+  zero_out_far: False 
+  termination_scales:
+    max_ref_motion_distance: 10.
+
+resume : True
+load_run : 25_12_05_23-30-46_OmniH2O_TEACHER_G1 # -1 : last run
+checkpoint : -1 # -1 : last saved model +
+

@@ -1,0 +1,42 @@
+Extend:
+  extend : True
+  extend_link_name : ["left_hand_link", "right_hand_link", "head_link"]
+  extend_parent_idx : [15, 19, 1]
+  extend_local_translation : [[0.3, 0, 0], [0.3, 0, 0], [0, 0, 0.75]]
+  extend_local_rotation : [[1, 0, 0, 0], [1, 0, 0, 0], [1, 0, 0, 0]]
+        
+ROBOT_ROTATION_AXIS : [
+        [0, 0, 1], # l_hip_yaw
+        [1, 0, 0], # l_hip_roll
+        [0, 1, 0], # l_hip_pitch
+        
+        [0, 1, 0], # kneel
+        [0, 1, 0], # ankle
+        
+        [0, 0, 1], # r_hip_yaw
+        [1, 0, 0], # r_hip_roll
+        [0, 1, 0], # r_hip_pitch
+        
+        [0, 1, 0], # kneel
+        [0, 1, 0], # ankle
+        
+        [0, 0, 1], # torso
+        
+        [0, 1, 0], # l_shoulder_pitch
+        [1, 0, 0], # l_roll_pitch
+        [0, 0, 1], # l_yaw_pitch
+        
+        [0, 1, 0], # l_elbow
+        
+        [0, 1, 0], # r_shoulder_pitch
+        [1, 0, 0], # r_roll_pitch
+        [0, 0, 1], # r_yaw_pitch
+        
+        [0, 1, 0], # r_elbow
+    ]
+xml_file : "resources/robots/h1/xml/h1.xml"
+
+JOINT_NUM : 19
+
+picked_joint : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+picked_link : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 21]

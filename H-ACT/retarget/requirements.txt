@@ -1,0 +1,11 @@
+numpy
+scipy
+torch
+smplx
+joblib
+easydict
+tqdm
+matplotlib
+git+https://github.com/otaheri/MANO
+mujoco
+pandas
