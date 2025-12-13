@@ -29,7 +29,7 @@ Here is the current release progress:
 - [**2025/12/10**] We are thrilled to initiate the release of **FRoM-W1**!
 
 
-# Usage
+## Usage
 
 <div align="center">
 <img src="./assets/FRoM-W1-Overview.png" alt="overview" width="80%">
