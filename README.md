@@ -1,6 +1,6 @@
 # FRoM-W1 (机智-W1): Towards General Humanoid Whole-Body Control with Language Instructions
 
-<div style="text-align: center;">
+<div align="center">
   The Humanoid Intelligence (Hi) Team at FudanNLP and OpenMOSS Group
 </div>
 
@@ -23,10 +23,10 @@ We fully open-source the entire **FRoM-W1** framework and hope it will advance t
 We will gradually release the paper, data, codebase, model checkpoints, and the real-robot deployment framework for **FRoM-W1** in the next week or two.
 
 Here is the current release progress:
-
-- 2025/12/20: We have uploaded the initial version of the code for two core modules, **[H-GPT](./H-GPT/README.md)**  and **[H-ACT](./H-ACT/README.md)** !
-- 2025/12/20: We have released our lightweight, modular humanoid-robot deployment framework [**RoboJuDo**](https://github.com/HansZ8/RoboJuDo)!
-- 2025/12/20: We are thrilled to initiate the release of **FRoM-W1**!
+- [**2025/12/13**] We have uploaded the checkpoints for HGPT, Baselines (SMPL-X verison of T2M, MotionDiffuse, MLD, T2M-GPT), and the SMPL-X Motion Generation eval model on [HuggingFace](https://huggingface.co/OpenMOSS-Team/FRoM-W1).
+- [**2025/12/10**] We have uploaded the initial version of the code for two core modules, **[H-GPT](./H-GPT/README.md)**  and **[H-ACT](./H-ACT/README.md)** !
+- [**2025/12/10**] We have released our lightweight, modular humanoid-robot deployment framework [**RoboJuDo**](https://github.com/HansZ8/RoboJuDo)!
+- [**2025/12/10**] We are thrilled to initiate the release of **FRoM-W1**!
 
 
 # Usage
@@ -49,7 +49,7 @@ The complete **FRoM-W1** workflow is illustrated above:
 If you find our work useful, please cite it for now in the following way:
 ```bibtex
 @misc{FRoM-W1,
-  author = {Peng Li, Zihan Zhuang, Yangfan Gao, Yi Dong, Sixian Li, Changhao Jiang, Shihan Dou, Zhiheng Xi, Enyu Zhou, Jixuan Huang, Hui Li, Xingjun Ma, Tao Gui, Zuxuan Wu, Qi Zhang, Xuanjing Huang, Yu-Gang Jiang, Xipeng Qiu},
+  author = {Peng Li, Zihan Zhuang, Yangfan Gao, Yi Dong, Sixian Li, Changhao Jiang, Shihan Dou, Zhiheng Xi, Enyu Zhou, Jixuan Huang, Hui Li, Jingjing Gong, Xingjun Ma, Tao Gui, Zuxuan Wu, Qi Zhang, Xuanjing Huang, Yu-Gang Jiang, Xipeng Qiu},
   title = {FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions},
   url = {https://github.com/OpenMOSS/FRoM-W1},
   year = {2025}
