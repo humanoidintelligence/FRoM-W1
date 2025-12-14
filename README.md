@@ -1,12 +1,13 @@
-# FRoM-W1 (机智-W1): Towards General Humanoid Whole-Body Control with Language Instructions
+# FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions
 
 <div align="center">
   <img src="./assets/hi_logo.png" alt="FRoM-W1" width="10%">
 
-  The Humanoid Intelligence (Hi) Team at FudanNLP and OpenMOSS Group
+  The Humanoid Intelligence Team from FudanNLP and OpenMOSS
 </div>
+
 <div align="center">
-  <a href="https://huggingface.co/OpenMOSS-Team/FRoM-W1">🤗Huggingface</a>
+  <a href="https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets">🤗Datasets</a>&emsp;<a href="https://huggingface.co/OpenMOSS-Team/FRoM-W1">🤗Models</a>
 </div>
 
 ## Introduction
@@ -16,7 +17,7 @@
 
 
 Humanoid robots are capable of performing various actions such as greeting, dancing, and even backflipping. However, these motions are often hard-coded or specifically trained, which limits their versatility. 
-In this work, we present **FRoM-W1**, an open-source framework designed to achieve general humanoid whole-body motion control using natural language. 
+In this work, we present **FRoM-W1[^1]**, an open-source framework designed to achieve general humanoid whole-body motion control using natural language. 
 To universally understand natural language and generate corresponding motions, as well as enable various humanoid robots to stably execute these motions in the physical world under gravity, **FRoM-W1** operates in two stages: 
 (a) **H-GPT**: Utilizing massive human data, a large-scale language-driven human whole-body motion generation model is trained to generate diverse natural behaviors.
 We further leverage the Chain-of-Thought technique to improve the model’s generalization in instruction understanding. 
@@ -25,11 +26,13 @@ It is then deployed on real robots via a modular simulation-to-reality module.
 We extensively evaluate our framework on the Unitree H1 and G1 robots, demonstrating successful language-to-motion generation and stable execution in both simulation and real-world settings. 
 We fully open-source the entire **FRoM-W1** framework and hope it will advance the development of humanoid intelligence.
 
+[^1]: **F**oundational Humanoid **Ro**bot **M**odel - **W**hole-Body Control, Version **1**
+
 ## Release Timeline
 We will gradually release the paper, data, codebase, model checkpoints, and the real-robot deployment framework for **FRoM-W1** in the next week or two.
 
 Here is the current release progress:
-- [**2025/12/13**] We have uploaded the checkpoints for HGPT, Baselines (SMPL-X verison of T2M, MotionDiffuse, MLD, T2M-GPT), and the SMPL-X Motion Generation eval model on [HuggingFace](https://huggingface.co/OpenMOSS-Team/FRoM-W1).
+- [**2025/12/13**] We have uploaded the checkpoints for HGPT, Baselines (SMPL-X verison of T2M, MotionDiffuse, MLD, T2M-GPT), and the SMPL-X Motion Generation eval model on **[HuggingFace Models](https://huggingface.co/OpenMOSS-Team/FRoM-W1)**.
 - [**2025/12/10**] We have uploaded the initial version of the code for two core modules, **[H-GPT](./H-GPT/README.md)**  and **[H-ACT](./H-ACT/README.md)** !
 - [**2025/12/10**] We have released our lightweight, modular humanoid-robot deployment framework [**RoboJuDo**](https://github.com/HansZ8/RoboJuDo)!
 - [**2025/12/10**] We are thrilled to initiate the release of **FRoM-W1**!
