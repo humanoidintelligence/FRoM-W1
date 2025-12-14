@@ -1,13 +1,13 @@
 # FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions
 
 <div align="center">
-  <img src="./assets/hi_logo.png" alt="FRoM-W1" width="10%">
+  <img src="./assets/hi_logo.png" alt="FRoM-W1" width="7.5%">
 
-  The Humanoid Intelligence Team from FudanNLP and OpenMOSS
+  The **H**umanoid **I**ntelligence Team from FudanNLP and OpenMOSS
 </div>
 
 <div align="center">
-  <a href="https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets">🤗Datasets</a>&emsp;<a href="https://huggingface.co/OpenMOSS-Team/FRoM-W1">🤗Models</a>
+  <a href="https://github.com/OpenMOSS/FRoM-W1">💻Github</a>&emsp;<a href="https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets">🤗Datasets</a>&emsp;<a href="https://huggingface.co/OpenMOSS-Team/FRoM-W1">🤗Models</a>
 </div>
 
 ## Introduction
@@ -32,7 +32,7 @@ We fully open-source the entire **FRoM-W1** framework and hope it will advance t
 We will gradually release the paper, data, codebase, model checkpoints, and the real-robot deployment framework for **FRoM-W1** in the next week or two.
 
 Here is the current release progress:
-- [**2025/12/14**] We have released the **CoT data** of HumanML3D-X on [HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets).
+- [**2025/12/14**] We have released the **CoT data** of HumanML3D-X on **[HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets)**.
 - [**2025/12/13**] We have uploaded the checkpoints for HGPT, Baselines (SMPL-X version of T2M, MotionDiffuse, MLD, T2M-GPT), and the SMPL-X Motion Generation eval model on **[HuggingFace Models](https://huggingface.co/OpenMOSS-Team/FRoM-W1)**.
 - [**2025/12/10**] We have uploaded the initial version of the code for two core modules, **[H-GPT](./H-GPT/README.md)**  and **[H-ACT](./H-ACT/README.md)** !
 - [**2025/12/10**] We have released our lightweight, modular humanoid-robot deployment framework [**RoboJuDo**](https://github.com/HansZ8/RoboJuDo)!
@@ -51,9 +51,17 @@ The complete **FRoM-W1** workflow is illustrated above:
   Deploy **H-GPT** via command-line tools or a web interface to convert natural-language commands into human motion representations.  
   This module provides full training, inference, and evaluation code, and pretrained models are available on HuggingFace.
 
+<div align="center">
+<img src="./assets/FRoM-W1-HGPT.png" alt="fromw1-hgpt" width="80%">
+</div>
+
 - **H-ACT**  
   **H-ACT** converts the motion representations from H-GPT into SMPL-X motion sequences and further retargets them to various humanoid robots.  
   The resulting motions can be used both for training control policies and executing actions on real robots using our deployment pipeline.
+
+<div align="center">
+<img src="./assets/FRoM-W1-HACT.png" alt="fromw1-hact" width="80%">
+</div>
 
 ## Citation
 If you find our work useful, please cite it for now in the following way:
