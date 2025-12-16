@@ -32,6 +32,7 @@ We fully open-source the entire **FRoM-W1** framework and hope it will advance t
 We will gradually release the paper, data, codebase, model checkpoints, and the real-robot deployment framework for **FRoM-W1** in the next week or two.
 
 Here is the current release progress:
+- [**2025/12/16**] We have released code to train and evaluate [T2M-GPT](https://github.com/Mael-zys/T2M-GPT) on HumanML3D-X at [baselines/T2M-GPT](./baselines/T2M-GPT).
 - [**2025/12/14**] We have released the **CoT data** of HumanML3D-X on **[HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets)**.
 - [**2025/12/13**] We have uploaded the checkpoints for HGPT, Baselines (SMPL-X version of T2M, MotionDiffuse, MLD, T2M-GPT), and the SMPL-X Motion Generation eval model on **[HuggingFace Models](https://huggingface.co/OpenMOSS-Team/FRoM-W1)**.
 - [**2025/12/10**] We have uploaded the initial version of the code for two core modules, **[H-GPT](./H-GPT/README.md)**  and **[H-ACT](./H-ACT/README.md)** !
