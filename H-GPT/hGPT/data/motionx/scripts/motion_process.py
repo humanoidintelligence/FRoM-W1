@@ -475,7 +475,7 @@ if __name__ == "__main__":
     - Recovered joint positions are saved in the 'new_joints' directory.
     - Original joint vectors are saved in the 'new_joint_vecs' directory.
     """
-    base_path = '/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/pli/HumanoidGPT/datasets/motionx/data/'
+    base_path = 'YOUR_DATA_BASE_PATH'
     
     example_id = "000021"
     # Lower legs

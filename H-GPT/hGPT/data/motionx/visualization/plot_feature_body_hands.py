@@ -252,7 +252,7 @@ if __name__ == '__main__':
     # for motionx data process
     # import random
     
-    # data_list = findAllFile('/inspire/hdd/ws-8207e9e2-e733-4eec-a475-cfa1c36480ba/embodied-multimodality/qiuxipeng-24028/xpqiu/pli/HumanoidGPT/datasets/motionx/data/motion_data/vectors_623')
+    # data_list = findAllFile('')
     # random.shuffle(data_list)
     
     # for data in data_list:
@@ -261,7 +261,7 @@ if __name__ == '__main__':
     #     if os.path.exists(outname):
     #         continue
         
-    #     base_path = '/inspire/hdd/ws-8207e9e2-e733-4eec-a475-cfa1c36480ba/embodied-multimodality/qiuxipeng-24028/xpqiu/pli/HumanoidGPT/datasets/motionx/data'
+    #     base_path = ''
     #     example_path = f'{base_path}/motion_data/vectors_623/{data}.npy'
     #     if not os.path.exists(example_path):
     #         continue
@@ -269,8 +269,8 @@ if __name__ == '__main__':
     import pickle
     from tqdm import tqdm
     
-    # data_list = findAllFile('/inspire/hdd/ws-8207e9e2-e733-4eec-a475-cfa1c36480ba/embodied-multimodality/public/hgpt/pli/HumanoidGPT/predictions')
-    data_list = findAllFile('/inspire/hdd/ws-8207e9e2-e733-4eec-a475-cfa1c36480ba/embodied-multimodality/public/hgpt/pli/HumanoidGPT/results/hgpt/VQVAE_MotionX_Debug/samples_2024-12-18-15-11-03/aist')
+    # data_list = findAllFile('')
+    data_list = findAllFile('')
     num = 0
     max_num = 10
     for data in data_list:

@@ -71,7 +71,7 @@ def mean_variance(data_dir, save_dir, joints_num, add_face=False):
     return Mean, Std
 
 if __name__ == '__main__':
-    base_path = '/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/pli/HumanoidGPT/datasets/motionx/data'
+    base_path = 'YOUR_BASE_PATH'
     data_dir = f'{base_path}/motion_data/vectors_263'
     save_dir = f'{base_path}/mean_std/vectors_263'
     mean, std = mean_variance(data_dir, save_dir, 22, add_face=False)

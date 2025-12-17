@@ -47,7 +47,7 @@ import pickle
 import torch
 import trimesh
 # Change your own model path
-HUMAN_MODEL_PATH = '/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/pli/HumanoidGPT/deps/body_models'
+HUMAN_MODEL_PATH = 'YOUR_BODY_MODEL_PATH'
 
 
 class SMPLX(object):

@@ -239,7 +239,7 @@ if __name__ == '__main__':
         if os.path.exists(outname):
             continue
         
-        base_path = '/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/pli/HumanoidGPT/datasets/motionx/data'
+        base_path = ''
         example_path = f'{base_path}/motion_data/vectors_263/{data}.npy'
         features = torch.from_numpy(np.load(example_path))
         global_postion = recover_from_ric(features, 22).detach().cpu().numpy()

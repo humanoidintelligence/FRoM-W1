@@ -364,7 +364,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     
     # Visualize your final data, please define your example_path, like 'new_data_humanml_000067_joints_using_smplx_rotation.npy'
-    # example_path = '/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/hgpt/datasets/code/tomato_represenation/motion_data/new_joints/humanml/000321.npy'
+    # example_path = ''
     # assert example_path != None
     data_list = findAllFile(args.path)
     

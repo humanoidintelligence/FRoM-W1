@@ -1,6 +1,4 @@
 import sys
-sys.path.append('/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/hgpt/datasets/downloads/human_body_prior-master/src')
-sys.path.append('/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/hgpt/datasets/downloads/body_visualizer/src')
 
 import os
 from os import path as osp
@@ -54,7 +52,7 @@ if __name__ == '__main__':
         outname = f'./vis_results/feat_body_hands_face_{data.replace("/","_")}.gif'
         if os.path.exists(outname):
             continue
-        example_path = f'/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/hgpt/datasets/code/tomato_represenation/motion_data/smplx_322/{data}.npy'
+        example_path = f''
         motion = np.load(example_path)
         motion = torch.tensor(motion).float()
         motion_parms = {

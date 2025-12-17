@@ -58,7 +58,7 @@ if __name__ == "__main__":
     body_joints = 22
 
     # change your folder path here
-    base_path = '/inspire/hdd/ws-f4d69b29-e0a5-44e6-bd92-acf4de9990f0/public-project/qiuxipeng-24028/workspace/pli/HumanoidGPT/datasets/motionx/data/'
+    base_path = 'YOUR_DATA_PATH'
     folder_path = base_path + 'motion_data/joints_623'
     file_names = findAllFile(folder_path)
     inputs = [(idx, file_path, body_joints, joints) for idx, file_path in enumerate(file_names) if not os.path.exists(file_path.replace("joints_623", "joints_263"))]

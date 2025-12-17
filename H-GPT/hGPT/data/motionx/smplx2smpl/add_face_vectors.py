@@ -67,7 +67,7 @@ def process_file_parallel(idx, file_path):
 if __name__ == "__main__":
     # transfer_to_body_only_humanml
     # change your folder path here
-    base_path = '/inspire/hdd/ws-8207e9e2-e733-4eec-a475-cfa1c36480ba/embodied-multimodality/qiuxipeng-24028/xpqiu/pli/HumanoidGPT/datasets/motionx/data/motion_data/'
+    base_path = 'YOUR_DATA_PATH'
     vectors_623_path = base_path + 'vectors_623'
     
     file_names = findAllFile(vectors_623_path)
