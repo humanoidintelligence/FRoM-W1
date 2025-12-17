@@ -50,7 +50,7 @@ Here is the current release progress:
 
 The complete **FRoM-W1** workflow is illustrated above:
 
-- **H-GPT**  
+- **[H-GPT](./H-GPT/README.md)**  
   Deploy **H-GPT** via command-line tools or a web interface to convert natural-language commands into human motion representations.  
   This module provides full training, inference, and evaluation code, and pretrained models are available on HuggingFace.
 
@@ -58,7 +58,7 @@ The complete **FRoM-W1** workflow is illustrated above:
 <img src="./assets/FRoM-W1-HGPT.png" alt="fromw1-hgpt" width="80%">
 </div>
 
-- **H-ACT**  
+- **[H-ACT](./H-ACT/README.md)**  
   **H-ACT** converts the motion representations from H-GPT into SMPL-X motion sequences and further retargets them to various humanoid robots.  
   The resulting motions can be used both for training control policies and executing actions on real robots using our deployment pipeline.
 
