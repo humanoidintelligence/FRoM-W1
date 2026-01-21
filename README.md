@@ -7,7 +7,7 @@
 </div>
 
 <div align="center">
-  <a href="https://github.com/OpenMOSS/FRoM-W1">💻Github</a>&emsp;<a href="https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets">🤗Datasets</a>&emsp;<a href="https://huggingface.co/OpenMOSS-Team/FRoM-W1">🤗Models</a>
+  <a href="https://github.com/OpenMOSS/FRoM-W1">💻Github</a>&emsp;<a href="https://arxiv.org/abs/2601.12799">📄Paper</a>&emsp;<a href="https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets">🤗Datasets</a>&emsp;<a href="https://huggingface.co/OpenMOSS-Team/FRoM-W1">🤗Models</a>
 </div>
 
 ## Introduction
@@ -32,6 +32,7 @@ We fully open-source the entire **FRoM-W1** framework and hope it will advance t
 We will gradually release the paper, data, codebase, model checkpoints, and the real-robot deployment framework for **FRoM-W1** in the next week or two.
 
 Here is the current release progress:
+- [**2026-01-21**] 🎉🎉 We have released the [Technical Report](https://arxiv.org/abs/2601.12799) of FRoM-W1!
 - [**2025/12/18**] We have released the CoT data of Motion-X on **[HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets)**.
 - [**2025/12/17**] We have released the **perturbed text data** (i.e., **δ-Humanml3d-X**) on **[HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets)**.
 - [**2025/12/17**] We have released the code to train and evaluate other baselines: [text-to-motion](https://github.com/EricGuo5513/text-to-motion), [MLD](https://github.com/ChenFengYe/motion-latent-diffusion), and [MotionDiffuse](https://github.com/mingyuan-zhang/MotionDiffuse) on HumanML3D-X at [`baselines`](./baselines).
