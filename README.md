@@ -83,7 +83,7 @@ The complete **FRoM-W1** workflow is illustrated as below:
 <img src="./assets/FRoM-W1-HACT.png" alt="fromw1-hact" width="80%">
 </div>
 
-Please refer to the preview code in the corresponding folder for now, and we will provide a quick-start example later.
+Please refer to the preview code in the corresponding folder for now, and we will provide a quick-start example and more detailed README documents later.
 
 ## Citation
 If you find our work useful, please cite it in the following way:

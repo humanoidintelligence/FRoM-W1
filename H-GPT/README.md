@@ -6,26 +6,24 @@
 
 The motion-language model **H-GPT** serves as the central generative module of FRoM-W1, designed to produce diverse and semantically accurate whole-body motions conditioned on natural language instructions via a **Whole-Body Motion Tokenizer** and an auto-regressive **Motion Generator**.
 
-# Open-Source Roadmap
 
-- [] Pre-trained weights of all components
+<!-- # Open-Source Roadmap
+
+- [x] Pre-trained Checkpoints
 - [] Training Recipe
 - [] Evaluation Recipe
-- [] Deployment Tutorial
+- [] Deployment Tutorial -->
 
 
-# Pre-trained Weights
+# Model Checkpoints
 
-We release the weights of all components at HuggingFace:
+We released weights of all components at [HuggingFace](https://huggingface.co/OpenMOSS-Team/FRoM-W1).
 
-| Components | Weights |
+<!-- | Components | Weights |
 | :--- | :--- |
 | Whole-Body Motion Tokenizer | 🤗 |
 | Motion Generator (NoCoT) | 🤗 |
-| Motion Generator (CoT) | 🤗 |
-
-
-
+| Motion Generator (CoT) | 🤗 | -->
 
 # Training
 
@@ -40,14 +38,16 @@ pip install -r requirements.txt
 ```
 
 ## 📁 Data Preparation
-
+> TBC
 
 ## 🚀 Train H-GPT
-
+> TBC
 
 # Evaluation
+> TBC
 
 # Deployment
+> TBC
 
 ## 🧩 Environment Setup
 
