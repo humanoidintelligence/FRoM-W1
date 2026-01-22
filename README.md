@@ -85,6 +85,10 @@ The complete **FRoM-W1** workflow is illustrated as below:
 
 Please refer to the preview code in the corresponding folder for now, and we will provide a quick-start example and more detailed README documents later.
 
+## Acknowledgements
+
+We extend our gratitude to Biao Jiang for discussions and assistance regarding the motion generation models, to Tairan He and Ziwen Zhuang for their discussions and help in the motion tracking section.
+
 ## Citation
 If you find our work useful, please cite it in the following way:
 ```bibtex
