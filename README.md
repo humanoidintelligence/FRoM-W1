@@ -4,7 +4,7 @@
 
   <img src="./assets/hi_logo.jpg" alt="FRoM-W1" width="7.5%">
 
-  The Humanoid Intelligence Team from FudanNLP and OpenMOSS
+  The [Humanoid Intelligence Team](https://github.com/humanoidintelligence) from [FudanNLP](https://nlp.fudan.edu.cn/nlpen/main.htm) and [OpenMOSS](https://openmoss.github.io/)
 
 <p align="center">
   <a href="https://openmoss.github.io/FRoM-W1/">
@@ -29,10 +29,12 @@
 
 </div>
 
-## Introduction
+## 🌟 Introduction
 <div align="center">
   <img src="./assets/FRoM-W1-Teaser.png" alt="FRoM-W1" width="50%">
 </div>
+
+> For more information, please refer to our [project page](https://openmoss.github.io/FRoM-W1/) and [technical report](https://arxiv.org/abs/2601.12799).
 
 Humanoid robots are capable of performing various actions such as greeting, dancing and even backflipping. However, these motions are often hard-coded or specifically trained, which limits their versatility. In this work, we present **FRoM-W1**[^1], an open-source framework designed to achieve general humanoid whole-body motion control using natural language.
 
@@ -42,55 +44,102 @@ To universally understand natural language and generate corresponding motions, a
 Utilizing massive human data, a large-scale language-driven human whole-body motion generation model is trained to generate diverse natural behaviors. We further leverage the Chain-of-Thought technique to improve the model's generalization in instruction understanding.
 
 **(b) H-ACT**  
-After retargeting generated human whole-body motions into robot-specific actions, a motion controller that is pretrained and further fine-tuned through reinforcement learning in physical simulation enables humanoid robots to accurately and stably perform corresponding actions. It is then deployed on real robots via a modular simulation-to-reality module.
+After retargeting generated human whole-body motions into robot-specific actions, a motion controller that is pretrained and further fine-tuned through reinforcement learning in physical simulation enables humanoid robots to accurately and stably perform corresponding actions. It is then deployed on real robots via a modular sim-to-real module.
 
-We extensively evaluate **FRoM-W1** on Unitree H1 and G1 robots. Results demonstrate superior performance on the HumanML3D-X benchmark for human whole-body motion generation, and our introduced reinforcement learning fine-tuning consistently improves both motion tracking accuracy and task success rates of these humanoid robots. We open-source the entire **FRoM-W1** framework and hope it will advance the development of humanoid intelligence.
+We extensively evaluate **FRoM-W1** on Unitree H1 and G1 robots. Results demonstrate superior performance on the HumanML3D-X benchmark for human whole-body motion generation, and our introduced reinforcement learning fine-tuning consistently improves both motion tracking accuracy and task success rates of these humanoid robots. We open-source the entire **FRoM-W1** framework and hope it will advance the development of humanoid intelligence. 
 
 [^1]: **F**oundational Humanoid **Ro**bot **M**odel - **W**hole-Body Control, Version **1**
 
-## Release Timeline
-We will gradually release the paper, data, codebase, model checkpoints, and the real-robot deployment framework for **FRoM-W1**.
+## 🔥 Roadmap
 
-Here is the current release progress:
-- [**2026/01/21**] 🎉🎉🎉 We have released the **[Technical Report](https://arxiv.org/abs/2601.12799)** of FRoM-W1!
-- [**2025/12/18**] We have released the CoT data of Motion-X on [HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets).
-- [**2025/12/17**] We have released the perturbed text data, i.e., δHumanML3D-X, on [HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets).
-- [**2025/12/17**] We have released the code to train and evaluate other baselines: [text-to-motion](https://github.com/EricGuo5513/text-to-motion), [MLD](https://github.com/ChenFengYe/motion-latent-diffusion), and [MotionDiffuse](https://github.com/mingyuan-zhang/MotionDiffuse) on HumanML3D-X at [`baselines`](./baselines).
-- [**2025/12/16**] We have released the code to train and evaluate the baseline [T2M-GPT](https://github.com/Mael-zys/T2M-GPT) on HumanML3D-X at [`baselines/T2M-GPT`](./baselines/T2M-GPT).
-- [**2025/12/14**] We have released the CoT data of HumanML3D-X on [HuggingFace Datasets](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets).
-- [**2025/12/13**] We have uploaded the checkpoints for HGPT, Baselines (SMPL-X version of T2M, MotionDiffuse, MLD, T2M-GPT), and the SMPL-X Motion Generation eval model on [HuggingFace Models](https://huggingface.co/OpenMOSS-Team/FRoM-W1).
-- [**2025/12/10**] We have uploaded the initial version of the code for two core modules, [H-GPT](./H-GPT/README.md) and [H-ACT](./H-ACT/README.md)!
-- [**2025/12/10**] We have released our lightweight, modular humanoid-robot deployment framework **[RoboJuDo](https://github.com/HansZ8/RoboJuDo)**!
-- [**2025/12/10**] We are thrilled to initiate the release of **FRoM-W1**!
+- [x] 🎉 Release the initial codebase for the **[H-GPT](./H-GPT/README.md)** and **[H-ACT](./H-ACT/README.md)** modules
+- [x] 🎉 Release the amazing humanoid-robot deployment framework **[RoboJuDo](https://github.com/HansZ8/RoboJuDo)**
+- [x] Release the CoT datasets of the HumanML3D-X and Motion-X benchmarks, and the δHumanML3D-X benchmark
+- [x] Release checkpoints for the baseline models, SMPL-X version of T2M, MotionDiffuse, MLD, T2M-GPT
+- [x] 🎉 Release the **[Technical Report](https://arxiv.org/abs/2601.12799)** and **[Project Page](https://openmoss.github.io/FRoM-W1/)** of FRoM-W1!
+- [ ] More powerful models are working in progress
+
+## 💾 Datasets
+
+Due to license restrictions, we cannot publicly share all of the data. Here are the reference download and processing links for the relevant datasets:
+
+| **Module** | **Dataset Name** | **Download Links** |
+|:----------:|:----------------:|:------------------:|
+|            |    HumanML3D-X   | Please refer to the process in the [Motion-X](https://github.com/IDEA-Research/Motion-X) repo to download and process the corresponding AMASS data. The CoT part can be downloaded [here](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets/tree/main/data).|
+|    H-GPT   |   δHumanML3D-X   | After obtaining the HumanML3D-X data, replace the textual instructions in it with the perturbed versions provided [here](https://huggingface.co/datasets/OpenMOSS-Team/FRoM-W1-Datasets/tree/main/data). |
+|            |     Motion-X     | Please refer to the original [Motion-X](https://github.com/IDEA-Research/Motion-X) repo. Note that we did not use the Motion-X++ version; specifically, we used the version from [2024.2.6].|
+|            |       AMASS      | Please refer to the download and processing procedures for the [AMASS](https://amass.is.tue.mpg.de/index.html) dataset in the [human2humanoid](https://github.com/LeCAR-Lab/human2humanoid?tab=readme-ov-file#amass-dataset-preparation) project. |
+|    H-ACT   |     AMASS-H1     | The retargeted dataset for the Unitree H1 can be obtained from the [link](https://cmu.app.box.com/s/vfi619ox7lwf2hzzi710p3g2l59aeczv) provided by human2humanoid.|
+|            |     AMASS-G1     | We provide a retargeted dataset for the Unitree G1, with the link available [here]().|
+
+## 🧠 Models
+
+To keep the repository organized, we provide a subset of core model checkpoints below:
+
+| **Module** |  **Model Name**  | **Download Links** |
+|:----------:|:----------------:|:------------------:|
+|            |     Eval Model   |    [HuggingFace link](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/eval), which were trained following the [T2M](https://github.com/EricGuo5513/text-to-motion) pipeline with the SMPL-X format. |
+|            |  Baseline Models |    [HuggingFace link](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/baselines), including the SMPL-X version of the [T2M](https://github.com/EricGuo5513/text-to-motion), [MotionDiffuse](https://github.com/MotrixLab/MotionDiffuse), [MLD](https://github.com/ChenFengYe/motion-latent-diffusion/tree/main) and [T2M-GPT](https://github.com/Mael-zys/T2M-GPT) models. |
+|            |  H-GPT w.o. CoT  |  [HuggingFace link](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hgpt/humanml3d-x/lora/llama-3.1-nocot_maskinput_pkeep), you can refer to this [script](https://huggingface.co/OpenMOSS-Team/FRoM-W1/blob/main/lora_merge.py) to merge these LoRA parameters with the original [Llama-3.1](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) model. |
+|    H-GPT   |       H-GPT      |  [HuggingFace link](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hgpt/humanml3d-x/lora/llama-3.1-cot_maskinput_pkeep), you can refer to this [script](https://huggingface.co/OpenMOSS-Team/FRoM-W1/blob/main/lora_merge.py) to merge these LoRA parameters with the original [Llama-3.1](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) model.  |
+|            | H-GPT++ w.o. CoT |  [HuggingFace link](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hgpt/motionx/lora/llama-3.1-nocot), you can refer to this [script](https://huggingface.co/OpenMOSS-Team/FRoM-W1/blob/main/lora_merge.py) to merge these LoRA parameters with the original [Llama-3.1](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) model. |
+|            |      H-GPT++     |  [HuggingFace link](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hgpt/motionx/lora/llama-3.1-cot), you can refer to this [script](https://huggingface.co/OpenMOSS-Team/FRoM-W1/blob/main/lora_merge.py) to merge these LoRA parameters with the original [Llama-3.1](https://github.com/meta-llama/llama-models/blob/main/models/llama3_1/MODEL_CARD.md) model.    |
+|            |      H1-Full     |   [Teacher Policy](), [Student Policy](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hact/h1/25_12_10_14-16-23_OmniH2O_STUDENT)      |
+|    H-ACT   |      H1-Clean    |   [Teacher Policy](), [Student Policy](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hact/h1/25_12_10_14-13-33_OmniH2O_STUDENT_filter)      |
+|            |      G1-Full     |   [Teacher Policy](), [Student Policy](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hact/g1/25_12_11_18-16-37_OmniH2O_STUDENT)      |
+|            |      G1-Clean    |   [Teacher Policy](), [Student Policy](https://huggingface.co/OpenMOSS-Team/FRoM-W1/tree/main/hact/g1/25_12_11_18-18-10_OmniH2O_STUDENT_FILTER)      |
 
 
-## Usage
-The complete **FRoM-W1** workflow is illustrated as below:
+If you require additional model checkpoints, please contact us.
 
-<div align="center">
-<img src="./assets/FRoM-W1-Overview.png" alt="overview" width="80%">
-</div>
+## 🚀 Quick Start
 
-- **[H-GPT](./H-GPT/README.md)**: Deploy **H-GPT** via command-line tools or a web interface to convert natural-language commands into human motion representations. We provide the complete code for training, inference, and evaluation in this module, with pretrained models available on HuggingFace.
+### Setup
 
-<div align="center">
-<img src="./assets/FRoM-W1-HGPT.png" alt="fromw1-hgpt" width="80%">
-</div>
+```bash
+conda create -n fromw1 python=3.10
+conda activate fromw1
+pip install -r ./H-GPT/requirements_deploy.txt
+pip install -r ./H-ACT/retarget/requirements.txt
+```
 
-- **[H-ACT](./H-ACT/README.md)**: **H-ACT** converts the motion representations from H-GPT into SMPL-X motion sequences and further retargets them to various humanoid robots. The resulting motions can be used both for training control policies and executing actions on real robots using our deployment pipeline.
+### Inference
 
-<div align="center">
-<img src="./assets/FRoM-W1-HACT.png" alt="fromw1-hact" width="80%">
-</div>
+**H-GPT**
 
-Please refer to the preview code in the corresponding folder for now, and we will provide a quick-start example and more detailed README documents later.
+1. Download the H-GPT whole-body motion tokenizer and the motion generator from HuggingFace.
+2. Replace the path to the motion tokenizer and the motion generator at line 55 & 78 of `./H-GPT/hGPT/configs/config_deployment_cot.yaml`
+3. Run `bash ./H-GPT/app.sh` to deploy the H-GPT model to a gradio app and generate human motions.
 
-## Acknowledgements
+**H-ACT**
+
+1. Download the [SMPL](https://smpl.is.tue.mpg.de/) and [MANO](https://mano.is.tue.mpg.de/) models and organize them according to the H-ACT README file. 
+2. Run `python ./H-ACT/retarget/main.py` to retarget the generated human motions into humanoid robot-specific joint sequences.
+
+### Deployment
+
+After obtaining the redirected robot sequence, you can conveniently use our [RoboJudo](https://github.com/OpenMOSS/RoboJuDo) repo to track various strategies in both simulation and real-world scenarios.
+
+
+## 🛠️ Model Training and Evaluation
+
+### H-GPT
+
+Please refer to the corresponding H-GPT [README](./H-GPT/README.md) file in the subfolder.
+
+### H-ACT
+
+Please refer to the corresponding H-ACT [README](./H-ACT/README.md) file in the subfolder.
+
+## 🙏 Acknowledgements
 
 We extend our gratitude to Biao Jiang for discussions and assistance regarding the motion generation models, to Tairan He and Ziwen Zhuang for their discussions and help in the motion tracking section.
 
-## Citation
+And we thank all the relevant open-source datasets and open-source codes; it is these open-source projects that have propelled the advancement of the entire field!
+
+## 📄 Citation
 If you find our work useful, please cite it in the following way:
+
 ```bibtex
 @misc{li2026fromw1generalhumanoidwholebody,
       title={FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions}, 
@@ -102,4 +151,5 @@ If you find our work useful, please cite it in the following way:
       url={https://arxiv.org/abs/2601.12799}, 
 }
 ```
+
 Welcome to star ⭐ our GitHub Repo, raise issues, and submit PRs!
