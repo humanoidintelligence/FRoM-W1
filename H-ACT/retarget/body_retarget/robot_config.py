@@ -114,6 +114,9 @@ class G1Config:
     WRIST_PICK = ['left_wrist_yaw_link', 'right_wrist_yaw_link',]
     SMPL_WRIST_PICK = ['L_Hand', 'R_Hand']
     
+    FIX_BASE_HEIGHT = True
+    FIX_BASE_HEIGHT_VALUE = 0.75
+    
     def __init__(self):
         if self.Extend.extend:
             self.ROBOT_JOINT_NAMES = self.ROBOT_JOINT_NAMES + self.Extend.extend_link_name
@@ -180,6 +183,9 @@ class H1Config:
     
     WRIST_PICK = []
     SMPL_WRIST_PICK = []
+
+    FIX_BASE_HEIGHT = True
+    FIX_BASE_HEIGHT_VALUE = 1.0
     
     def __init__(self):
         if self.Extend.extend:
@@ -249,6 +255,9 @@ class H121DOFConfig:
     
     WRIST_PICK = ['left_wrist_link', 'right_wrist_link']
     SMPL_WRIST_PICK = ['L_Hand', 'R_Hand']
+
+    FIX_BASE_HEIGHT = True
+    FIX_BASE_HEIGHT_VALUE = 1.0
     
     def __init__(self):
         if self.Extend.extend:

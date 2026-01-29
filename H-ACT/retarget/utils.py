@@ -397,7 +397,7 @@ def feats2joints(features):
     features = denormalize(features)
     return recover_from_ric(features, 52)
 
-def set_fps(data_dict, target_fps=None):
+def set_fps(data_dict, target_fps=None, modify=True):
     if target_fps is None:
         return data_dict
     
@@ -432,7 +432,10 @@ def set_fps(data_dict, target_fps=None):
     new_rots = slerp(t_new).as_quat()
     data_dict["root_rot"] = new_rots.astype(np.float32)
 
-    data_dict["fps"] = target_fps
+    if modify:
+        data_dict["fps"] = 30
+    else:
+        data_dict["fps"] = target_fps
     
     return data_dict
 

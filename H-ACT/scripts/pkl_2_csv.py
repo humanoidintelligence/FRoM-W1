@@ -4,7 +4,7 @@ import pandas as pd
 from scipy.spatial.transform import Rotation as R
 
 
-def from_amass_to_csv(amass_file: dict, scale: float = 0.3):
+def from_amass_to_csv(amass_file: dict, scale: float = 0.6):
     if "motion 0" in amass_file:
         amass_file = amass_file["motion 0"]
         
@@ -22,8 +22,9 @@ def from_amass_to_csv(amass_file: dict, scale: float = 0.3):
     else:
         trans = amass_file["root_trans_offset"]
 
-    trans0 = trans[0:1]
-    trans = trans0 + (trans - trans0) * scale
+    trans[:, :2] -= trans[0:1, :2]
+    trans[:, :2] *= scale
+    trans[:, 2] += 0.15
 
     root_rot = amass_file["root_rot"]
     root_rot = R.from_quat(root_rot).as_quat()

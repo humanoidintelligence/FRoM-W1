@@ -135,8 +135,8 @@ def process_data(amass_data: dict, robot: str="G1", smpl_parser_n=smpl_parser_n,
     skip = int(amass_data['fps'] // 30)
     trans = torch.from_numpy(amass_data['trans'][::skip]).float().to(device)
 
-    if len(trans) >= 1000:
-        raise ValueError(f"Too long!{len(trans)}")
+    # if len(trans) >= 1000:
+    #     raise ValueError(f"Too long!{len(trans)}")
     
     N = trans.shape[0]
     pose_aa_walk = torch.from_numpy(
@@ -201,7 +201,11 @@ def process_data(amass_data: dict, robot: str="G1", smpl_parser_n=smpl_parser_n,
     fk_return = robot.fk_batch(pose_aa_robot_new, root_trans_offset[None, ])
 
     root_trans_offset_dump = root_trans_offset.clone()
-    root_trans_offset_dump[..., 2] -= fk_return.global_translation[..., 2].min().item() - 0.08
+
+    if robot.cfg.FIX_BASE_HEIGHT:
+        root_trans_offset_dump[..., 1] += (robot.cfg.FIX_BASE_HEIGHT_VALUE - root_trans_offset_dump[0, 1])
+    else:
+        root_trans_offset_dump[..., 1] -= fk_return.global_translation[..., 2].min().item() - 0.08
 
     result = {
             "body_names": robot.model_names,

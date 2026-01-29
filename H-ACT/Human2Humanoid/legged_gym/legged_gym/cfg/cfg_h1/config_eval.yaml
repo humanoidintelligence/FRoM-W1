@@ -1,0 +1,69 @@
+defaults:
+  - config_teleop
+  - override rewards: rewards_teleop_omnih2o_teacher 
+
+task: "robot:teleop"
+run_name: "OmniH2O_STUDENT_H1"
+num_envs: 103
+sim_device: 'cuda:1'
+headless: True
+max_iterations: 1
+use_wandb: False
+
+env:
+  num_observations: 1665
+  num_privileged_obs: 1742
+  add_short_history: True 
+  short_history_length: 25
+  im_eval: True
+  test: True
+
+motion:
+  teleop_obs_version: "v-teleop-extend-vr-max-nolinvel"
+  teleop_selected_keypoints_names: [] 
+  extend_head: False
+  motion_file: 'resources/motions/h1/100_height_adjusted.pkl'
+
+asset:
+  zero_out_far: False 
+  termination_scales:
+    max_ref_motion_distance: 1.5 
+
+rewards: 
+  penalty_curriculum: True 
+  penalty_scale: 0.5
+  desired_feet_max_height_for_this_air : 0.1
+  
+train:
+  distill: True 
+  policy:
+    init_noise_std: 0.001 
+  runner:
+    has_eval: True
+    eval_interval: 1 
+  dagger:
+    load_run_dagger: 25_11_19_16-02-17_OmniH2O_TEACHER_H1
+    checkpoint_dagger: 50000
+    dagger_only: True
+
+terrain:
+  curriculum: False
+  mesh_type: 'trimesh'
+
+noise:
+  add_noise: False
+
+domain_rand:
+  randomize_friction: False
+  push_robots: False
+  randomize_base_mass: False
+  randomize_rfi_lim: False
+  randomize_pd_gain: False
+  randomize_link_mass: False
+  andomize_base_com: False
+  randomize_ctrl_delay: False
+  ctrl_delay_step_range: [1, 3]
+
+resume : True
+load_run : 25_12_08_18-02-08_OmniH2O_STUDENT_H1 # -1 : last run
+checkpoint : -1 # -1 : last saved model +

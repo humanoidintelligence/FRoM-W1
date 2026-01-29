@@ -133,15 +133,11 @@ class OnPolicyRunner:
             with torch.inference_mode():
                 for i in range(self.num_steps_per_env):
                     actions = self.alg.act(obs, critic_obs)
-                    # actions = insert_zeros(actions, self.env.ignored_joint_idx)
-                    
                     obs, privileged_obs, rewards, dones, infos = self.env.step(actions.detach())
                     
                     critic_obs = privileged_obs if privileged_obs is not None else obs
                     obs, critic_obs, rewards, dones = obs.to(self.device), critic_obs.to(self.device), rewards.to(self.device), dones.to(self.device)
-                    dof_vel = self.env.dof_vel
-                    dof_names = self.env.dof_names
-                    torques = self.env.torques
+                    
                     
                     if self.alg_cfg.get("save_z_noise", False):
                         infos['kin_dict']['z_noise'] = self.alg.actor_critic.z_noise.clone()
@@ -356,9 +352,9 @@ class OnPolicyRunner:
                     "mpjpel_succ": metrics_succ_print['mpjpe_l'],
                     "mpjpe_pa": metrics_succ_print['mpjpe_pa'], 
                 }
-                # failed_keys = humanoid_env._motion_lib._motion_data_keys[terminate_hist[:humanoid_env._motion_lib._num_unique_motions]]
-                # success_keys = humanoid_env._motion_lib._motion_data_keys[~terminate_hist[:humanoid_env._motion_lib._num_unique_motions]]
-                # print("failed", humanoid_env._motion_lib._motion_data_keys[np.concatenate(self.terminate_memory)[:humanoid_env._motion_lib._num_unique_motions]])
+                # failed_keys = humanoid_env._motion_lib._motion_data_keys[terminate_hist[:-1]]
+                # success_keys = humanoid_env._motion_lib._motion_data_keys[~terminate_hist[:-1]]
+                # print("failed", humanoid_env._motion_lib._motion_data_keys[np.concatenate(self.terminate_memory)[:-1]])
                 # joblib.dump(failed_keys, "output/dgx/smpl_im_shape_long_1/failed_1.pkl")
                 # joblib.dump(success_keys, "output/dgx/smpl_im_fit_3_1/long_succ.pkl")
                 # print("....")
@@ -402,9 +398,6 @@ class OnPolicyRunner:
                 ep_string += f"""{f'Mean episode {key}:':>{pad}} {value:.4f}\n"""
         mean_std = self.alg.actor_critic.std.mean()
         fps = int(self.num_steps_per_env * self.env.num_envs / (locs['collection_time'] + locs['learn_time']))
-        
-        for i in range(len(self.env.dof_names)):
-            self.writer.add_scalar(f'Policy/{self.env.dof_names[i]}', self.alg.actor_critic.std[i], locs['it'])
 
         self.writer.add_scalar('Episode/Average_episode_length_for_reward_curriculum', locs['average_episode_length_for_reward_curriculum'], locs['it'])
         self.writer.add_scalar('Episode/Penalty_scale', locs['penalty_scale'], locs['it'])
@@ -420,9 +413,6 @@ class OnPolicyRunner:
         self.writer.add_scalar('Perf/total_fps', fps, locs['it'])
         self.writer.add_scalar('Perf/collection time', locs['collection_time'], locs['it'])
         self.writer.add_scalar('Perf/learning_time', locs['learn_time'], locs['it'])
-        for i in range(len(locs["dof_names"])):
-            self.writer.add_scalar(f'Dof/{locs["dof_names"][i]}_joint_vel', locs['dof_vel'][0, i], locs['it'])
-            self.writer.add_scalar(f'Dof_Torque/{locs["dof_names"][i]}_joint_torque', locs['torques'][0, i], locs['it'])
 
         if len(locs['rewbuffer']) > 0:
             self.writer.add_scalar('Train/mean_reward', statistics.mean(locs['rewbuffer']), locs['it'])
